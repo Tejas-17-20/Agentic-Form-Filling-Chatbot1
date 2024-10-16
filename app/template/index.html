@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Form-Filling Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Insurance Claim Form</h2>
+            <form id="insuranceForm">
+                <!-- Full Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+
+                <!-- Age -->
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required><br>
+
+                <!-- Gender -->
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br>
+
+                <!-- Date of Birth -->
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br>
+
+                <!-- Incident Date -->
+                <label for="incidentDate">Incident Date:</label>
+                <input type="date" id="incidentDate" name="incidentDate" required><br>
+
+                <!-- Insurance Type -->
+                <label for="insuranceType">Insurance Type:</label>
+                <select id="insuranceType" name="insuranceType">
+                    <option value="car">Car Insurance</option>
+                    <option value="health">Health Insurance</option>
+                    <option value="life">Life Insurance</option>
+                    <option value="home">Home Insurance</option>
+                </select><br>
+
+                <!-- Policy Number -->
+                <label for="policyNumber">Policy Number:</label>
+                <input type="text" id="policyNumber" name="policyNumber" placeholder="Enter your policy number" required><br>
+
+                <!-- Claim Amount -->
+                <label for="claimAmount">Claim Amount:</label>
+                <input type="number" id="claimAmount" name="claimAmount" placeholder="Enter claim amount" required><br>
+
+                <!-- Email -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br>
+
+                <!-- Address -->
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea><br>
+
+                <!-- Damages Incurred -->
+                <label for="damages">Describe Damages Incurred:</label>
+                <textarea id="damages" name="damages" rows="4" placeholder="Describe the damages" required></textarea><br>
+
+                <!-- Was Police Report Filed? -->
+                <label for="policeReport">Was a Police Report Filed?</label>
+                <select id="policeReport" name="policeReport">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <!-- Is This the First Claim? -->
+                <label for="firstClaim">Is this your first claim?</label>
+                <select id="firstClaim" name="firstClaim">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <!-- Upload Supporting Documents -->
+                <label for="documents">Upload Supporting Documents:</label>
+                <input type="file" id="documents" name="documents"><br>
+
+                <!-- Additional Comments -->
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="3" placeholder="Any additional information?"></textarea><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <div class="chat-section">
+            <h2>Chat with the Bot</h2>
+            <div id="chat-window">
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Type your message here..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
